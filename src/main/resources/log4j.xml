@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" >
+<log4j:configuration>
+    <appender name="info" class="org.apache.log4j.RollingFileAppender">
+        <param name="Threshold" value="INFO" />
+        <param name="File"  value="${user.home}/.text-extraction-tool/logs/info/info.log" />
+        <param name="Append" value="true" />
+        <param name="MaxFileSize" value="5000KB" />
+        <param name="MaxBackupIndex" value="10" />
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-5p %d [%t] %c: %m%n" />
+        </layout>
+    </appender>
+    <appender name="error" class="org.apache.log4j.RollingFileAppender">
+        <param name="Threshold" value="ERROR" />
+        <param name="File" value="${user.home}/.text-extraction-tool/logs/error/error.log" />
+        <param name="Append" value="true" />
+        <param name="MaxFileSize" value="5000KB" />
+        <param name="MaxBackupIndex" value="10" />
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-5p %d [%t] %c: %m%n" />
+        </layout>
+    </appender>
+    <appender name="debug" class="org.apache.log4j.RollingFileAppender">
+        <param name="Threshold" value="DEBUG" />
+        <param name="File" value="${user.home}/.text-extraction-tool/logs/debug/debug.log" />
+        <param name="Append" value="true" />
+        <param name="MaxFileSize" value="5000KB" />
+        <param name="MaxBackupIndex" value="10" />
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-5p %d [%t] %c: %m%n" />
+        </layout>
+    </appender>
+    <appender name="warn" class="org.apache.log4j.RollingFileAppender">
+        <param name="Threshold" value="WARN" />
+        <param name="File" value="${user.home}/.text-extraction-tool/logs/warning/warn.log" />
+        <param name="Append" value="true" />
+        <param name="MaxFileSize" value="5000KB" />
+        <param name="MaxBackupIndex" value="10" />
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-5p %d [%t] %c: %m%n" />
+        </layout>
+    </appender>
+    <appender name="trace" class="org.apache.log4j.RollingFileAppender">
+        <param name="Threshold" value="WARN" />
+        <param name="File" value="${user.home}/.text-extraction-tool/logs/trace/trace.log" />
+        <param name="Append" value="true" />
+        <param name="MaxFileSize" value="5000KB" />
+        <param name="MaxBackupIndex" value="10" />
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-5p %d [%t] %c: %m%n" />
+        </layout>
+    </appender>
+    <root>
+        <appender-ref ref="info"/>
+        <appender-ref ref="trace"/>
+        <appender-ref ref="error"/>
+        <appender-ref ref="debug"/>
+        <appender-ref ref="warn"/>
+    </root>
+</log4j:configuration>
